@@ -1,9 +1,9 @@
 {
-  "name": "snake",
+  "name": "TEMPLATE",
   "version": "1.0.0",
-  "description": "Snake in JavaScript.",
+  "description": "D-e-s-c-r-i-p-t-i-o-n",
   "main": "index.js",
-  "author": "Matt Murphy",
+  "author": "Matthew Daniel Murphy",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
