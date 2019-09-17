@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
@@ -16,38 +16,40 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.s?css$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
           },
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [
-                path.join(__dirname, 'src'),
-                path.join(__dirname, 'public')
-              ]
-            }
-          }
-        ]
-      }
-    ]
+              sassOptions: {
+                includePaths: [
+                  path.join(__dirname, 'src'),
+                  path.join(__dirname, 'public'),
+                ],
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    })
-  ]
+      template: 'src/index.html',
+    }),
+  ],
 }
